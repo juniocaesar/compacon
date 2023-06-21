@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\DB;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,14 +14,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('home', ['content' => 'Beranda', 'title' => 'Beranda']);
-});
 
-Route::get('/home', function () {
-    return view('home', ['content' => 'Home', 'title' => 'Home']);
-});
+Route::view('/home', 'home', ['content' => 'Home', 'title' => 'Home']);
+Route::view('/', 'home', ['content' => 'Home', 'title' => 'Home']);
 
-Route::get('/subsidi/wilayah', function () {
-    return view('home', ['content' => 'Wilayah', 'title' => 'Wilayah']);
+Route::view('/buku_kas', 'home', ['content' => view('pages/akuntansi/v_buku_kas'), 'title' => 'Buku Kas']);
+Route::view('/daftar_akun', 'home', ['content' => view('pages/akuntansi/v_daftar_akun'), 'title' => 'Daftar Akun']);
+
+Route::get('/greeting', function () {
+    $results = DB::select('select * from tbl_coba');
+    return $results;
 });

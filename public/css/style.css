@@ -1,0 +1,7 @@
+.nas_icon {
+    background-image: url("../img/nas_icon.png");
+    height: 36px;
+    width: 36px;
+    display: block;
+    background-size: cover;
+}
