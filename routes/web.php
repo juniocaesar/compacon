@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\KasKecilController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,10 +19,5 @@ use Illuminate\Support\Facades\DB;
 Route::view('/home', 'home', ['content' => 'Home', 'title' => 'Home']);
 Route::view('/', 'home', ['content' => 'Home', 'title' => 'Home']);
 
-Route::view('/buku_kas', 'home', ['content' => view('pages/akuntansi/v_buku_kas'), 'title' => 'Buku Kas']);
-Route::view('/daftar_akun', 'home', ['content' => view('pages/akuntansi/v_daftar_akun'), 'title' => 'Daftar Akun']);
-
-Route::get('/greeting', function () {
-    $results = DB::select('select * from tbl_coba');
-    return $results;
-});
+// Route::view('/daftar_akun', 'home', ['content' => view('pages/akuntansi/v_daftar_akun'), 'title' => 'Daftar Akun']);
+Route::get('/buku_kas', 'App\Http\Controllers\KasKecilController@index');
