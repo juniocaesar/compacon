@@ -20,4 +20,4 @@ Route::view('/home', 'home', ['content' => 'Home', 'title' => 'Home']);
 Route::view('/', 'home', ['content' => 'Home', 'title' => 'Home']);
 
 // Route::view('/daftar_akun', 'home', ['content' => view('pages/akuntansi/v_daftar_akun'), 'title' => 'Daftar Akun']);
-Route::get('/buku_kas', 'App\Http\Controllers\KasKecilController@index');
+Route::get('/kas_kecil', 'App\Http\Controllers\KasKecilController@index');
