@@ -15,7 +15,7 @@ class KasKecilController extends Controller
      */
     public function index()
     {
-        $kaskecil = DB::select("SELECT  no, tanggal, keterangan, debit, kredit, SUM(ifnull(kredit, 0) - ifnull(debit, 0)) OVER (ORDER BY no ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW) as saldo FROM kas_kecil order by tanggal");
+        $kaskecil = DB::select("SELECT no, tanggal, keterangan, FORMAT(debit, 2, 'de_DE') as debit, FORMAT(kredit, 2, 'de_DE') as kredit, FORMAT(SUM(ifnull(kredit, 0) - ifnull(debit, 0)) OVER (ORDER BY no ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW), 2, 'de_DE') as saldo FROM kas_kecil order by tanggal desc");
         return view('home', ['content' => view('pages/akuntansi/v_kas_kecil', ['data_kas_kecil' => $kaskecil]), 'title' => 'Buku Kas']);
     }
 

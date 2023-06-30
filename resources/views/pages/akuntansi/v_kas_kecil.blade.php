@@ -108,9 +108,9 @@
                                 <td>{{$data->no}}</td>
                                 <td>{{$data->tanggal}}</td>
                                 <td>{{$data->keterangan}}</td>
-                                <td>{{$data->debit}}</td>
-                                <td>{{$data->kredit}}</td>
-                                <td>{{$data->saldo}}</td>
+                                <td style="text-align: right;">{{$data->debit}}</td>
+                                <td style="text-align: right;">{{$data->kredit}}</td>
+                                <td style="text-align: right;">{{$data->saldo}}</td>
                                 <td> - </td>
                                 <td> - </td>
                             </tr>
@@ -124,6 +124,12 @@
 
 
             </div>
+
+
+
+
+
+
 
 
 

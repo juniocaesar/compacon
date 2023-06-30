@@ -122,7 +122,7 @@
                 <div id="collapseAkuntansi" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <a class="collapse-item" href="/daftar_akun">Daftar Akun</a>
-                        <a class="collapse-item" href="/buku_kas">Buku Kas</a>
+                        <a class="collapse-item" href="/kas_kecil">Kas Kecil</a>
                         <a class="collapse-item" href="#">Saldo Rekening</a>
                         <a class="collapse-item" href="#">Neraca</a>
                     </div>
@@ -312,6 +312,8 @@
     <script src="{{ URL::asset('sbadmin/vendor/chart.js/Chart.min.js') }}">
 
     </script>
+
+
 
 
 
